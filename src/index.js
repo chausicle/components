@@ -28,14 +28,20 @@ const App = () => {
 
   const handleCommentList = (comments) => {
     return comments.map((detail, i) => (
-      <ApprovalCard>
-        <Comment key={i} data={detail} />
+      <ApprovalCard key={i}>
+        <Comment data={detail} />
       </ApprovalCard>
     ));
   };
 
   return (
     <div className="ui container comments">
+      <ApprovalCard>
+        <div>
+          <h4 style={{ color: "#db2929" }}>Warning!</h4>
+          Are you sure you want to do this?
+        </div>
+      </ApprovalCard>
       {handleCommentList(commentDetails)}
     </div>
   );
