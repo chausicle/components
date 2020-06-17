@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import faker from "faker";
 import Comment from "./components/Comment";
+import ApprovalCard from "./components/ApprovalCard";
 
 const App = () => {
   const commentDetails = [
@@ -26,7 +27,11 @@ const App = () => {
   ];
 
   const handleCommentList = (comments) => {
-    return comments.map((detail, i) => <Comment key={i} data={detail} />);
+    return comments.map((detail, i) => (
+      <ApprovalCard>
+        <Comment key={i} data={detail} />
+      </ApprovalCard>
+    ));
   };
 
   return (
